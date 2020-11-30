@@ -83,12 +83,18 @@ namespace _20109982_Task_1
     class MeleeWeapon : Weapon
     {
 
+        /// <summary>
+        /// Q.2.2 Lists the types of melee Weapons able to be found
+        /// </summary>
         public enum Types
         {
             DAGGER,
             LONGSWORD
         }
 
+        /// <summary>
+        /// Q.2.2 Sets the range of melee weapons to be 1.
+        /// </summary>
         public override int Range_Accessor
         {
             get
@@ -101,6 +107,13 @@ namespace _20109982_Task_1
             }
         }
 
+        /// <summary>
+        /// Q.2.2 The constructor for the subclass where, depending on the weapon type, will display either Dagger or Longsword stats.
+        /// </summary>
+        /// <param name="xPosition"></param>
+        /// <param name="yPosition"></param>
+        /// <param name="symbol"></param>
+        /// <param name="Weapon_Type"></param>
         public MeleeWeapon(int xPosition, int yPosition, char symbol, Types Weapon_Type) : base(xPosition, yPosition, symbol)
         {
             if (Weapon_Type == Types.DAGGER)

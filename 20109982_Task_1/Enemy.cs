@@ -26,10 +26,13 @@ namespace _20109982_Task_1
     }
 
     /// <summary>
-    /// Q.2.4
+    /// Q.2.4 Leader Subclass
     /// </summary>
     class Leader : Enemy
     {
+        /// <summary>
+        /// Q.2.4 Denotes the Leader's Target
+        /// </summary>
         private Tile Leader_Target
         {
             get
@@ -41,6 +44,12 @@ namespace _20109982_Task_1
                 Leader_Target = value;
             }
         }
+
+        /// <summary>
+        /// Q.2.4 A constructor that sets the stats of the Leader.
+        /// </summary>
+        /// <param name="xPosition"></param>
+        /// <param name="yPosition"></param>
         public Leader(int xPosition, int yPosition) : base(xPosition, yPosition, 2, 20, 'L')
         {
         }
