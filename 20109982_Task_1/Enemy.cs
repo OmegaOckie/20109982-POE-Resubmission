@@ -58,6 +58,17 @@ namespace _20109982_Task_1
                 Leader_Target = value;
             }
         }
+        public Tile Leader_Target_Accessor
+        {
+            get
+            {
+                return Leader_Target;
+            }
+            set
+            {
+                Leader_Target = value;
+            }
+        }
 
         /// <summary>
         /// Q.2.4 A constructor that sets the stats of the Leader.
@@ -70,6 +81,10 @@ namespace _20109982_Task_1
 
         public override Movement ReturnMove(Movement move = Movement.NONE)
         {
+            if (Leader_Target_Accessor = Hero)
+            {
+
+            }
             throw new NotImplementedException();
         }
     }

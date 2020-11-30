@@ -25,9 +25,9 @@ namespace _20109982_Task_1
             }
         }
 
-        Random rng = new Random();
+        private Random rng = new Random();
 
-        public Gold (int xPosition, int yPosition) : base()
+        public Gold (int xPosition, int yPosition) : base(xPosition, yPosition)
         {
              amountOfGold = rng.Next(6);
              myMap.mapItemsArr[xPosition,yPosition] = amountOfGold;

@@ -50,7 +50,7 @@ namespace _20109982_Task_1
         /// <param name="maximumHeight"></param>
         /// <param name="numberOfEnemies"></param>
         /// <param name="amountOfGoldDrops"></param>
-        public Map(int minimumWidth, int maximumWidth, int minimumHeight, int maximumHeight, int numberOfEnemies, int amountOfGoldDrops)
+        public Map(int minimumWidth, int maximumWidth, int minimumHeight, int maximumHeight, int numberOfEnemies, int amountOfGoldDrops, int weaponDrops)
         {
 
             //Randomised the dimensions of the map.

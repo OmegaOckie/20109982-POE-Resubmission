@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace _20109982_Task_1
 {
+    /// <summary>
+    /// Q.2.3 Mage subclass
+    /// </summary>
     class Mage : Enemy
     {
         public Mage(int xPosition, int yPosition) : base(xPosition, yPosition, 5, 5, 'M')
@@ -64,6 +67,11 @@ namespace _20109982_Task_1
             {
                 return false;
             }
+        }
+
+        public override Movement ReturnMove(Movement move = Movement.NONE)
+        {
+            throw new NotImplementedException();
         }
     }
 }

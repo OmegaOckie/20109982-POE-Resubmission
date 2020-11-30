@@ -19,7 +19,18 @@ namespace _20109982_Task_1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            playerStatsLabel.Text = 
+            
+            //Shop myShop = new Shop();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void shopButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
