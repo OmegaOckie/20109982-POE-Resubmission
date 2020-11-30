@@ -24,4 +24,30 @@ namespace _20109982_Task_1
             return "Enemy" + " at " + "[" + X + ", " + Y + "]" + "(" + damage + ")";
         }
     }
+
+    /// <summary>
+    /// Q.2.4
+    /// </summary>
+    class Leader : Enemy
+    {
+        private Tile Leader_Target
+        {
+            get
+            {
+                return Leader_Target;
+            }
+            set
+            {
+                Leader_Target = value;
+            }
+        }
+        public Leader(int xPosition, int yPosition) : base(xPosition, yPosition, 2, 20, 'L')
+        {
+        }
+
+        public override Movement ReturnMove(Movement move = Movement.NONE)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

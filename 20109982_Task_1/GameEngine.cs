@@ -13,9 +13,11 @@ namespace _20109982_Task_1
     class GameEngine
     {
 
+
         public GameEngine(Map map)
         {
             Map map = new Map();
+            Shop myShop = new Shop();
         }
 
         private Map Map;
