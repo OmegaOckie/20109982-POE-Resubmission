@@ -8,16 +8,21 @@ using System.Threading.Tasks;
 namespace _20109982_Task_1
 {
     /// <summary>
-    /// Q.2.1
+    /// Q.2.1 Tile abstract class. Base class needed for all objects with a position in-game.
     /// </summary>
     abstract class Tile
     {
-
+        /// <summary>
+        /// Q.2.1 Defines the type of tile of a coordinate.
+        /// </summary>
             public enum TileType
         {
             HERO, ENEMY, GOLD, WEAPON
         };
 
+        /// <summary>
+        /// X and Y are the variable coordinates of the Tile.
+        /// </summary>
         protected int x;
         protected int y;
 
@@ -46,8 +51,10 @@ namespace _20109982_Task_1
         protected TileType tile { get; set; }
 
 
-        //Created the relevant constructor for Q.2.1
 
+        /// <summary>
+        /// Q.2.1 Tile Constructor that sets the initial values for the Tile
+        /// </summary>
         public Tile()
         {
             X = 0;
@@ -56,7 +63,7 @@ namespace _20109982_Task_1
         }
 
         /// <summary>
-        /// Exists to border the map
+        /// Q.2.1 Exists to border the map
         /// </summary>
         class Obstacle : Tile
     {
