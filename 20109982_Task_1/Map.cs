@@ -71,6 +71,10 @@ namespace _20109982_Task_1
             mapItems[amountOfGoldDrops] = new Item[];
         }
 
+        public Map()
+        {
+        }
+
         /// <summary>
         /// Q.3.1 Updates the vision array for each character.
         /// </summary>
@@ -116,21 +120,30 @@ namespace _20109982_Task_1
                     tempTile = new Hero(randomX, randomY, heroHP, heroSymbol);
                     break;
                 case Tile.TileType.ENEMY:
-                    int enemyType = rng.Next(3);
+                    int enemyType = rng.Next(4);
                     if (enemyType <= 1)
 	{
                         tempTile = new Mage(randomX, randomY);
-	}  
-                    else
-	{
-             tempTile = new Goblin(randomX,randomY);
 	}
-                    
+                    else if (enemyType == 2)
+                    {
+                        tempTile = new Goblin(randomX, randomY);
+                    }
+                    else
+                    {
+                        tempTile = new Leader(randomX, randomY);
+                    }
+	
                     break;
                 case Tile.TileType.GOLD:
                     Gold(randomX, randomY);
                     break;
                 case Tile.TileType.WEAPON:
+                    int weaponType = rng.Next(4);
+                    if (weaponType <= 1)
+                    {
+                        tempTile = new ();
+                    }
                     break;
                 default:
                     break;

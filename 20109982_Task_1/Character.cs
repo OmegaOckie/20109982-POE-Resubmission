@@ -169,8 +169,8 @@ namespace _20109982_Task_1
         public void Pickup(Item i){
             switch (i)
 	{
-                case TileType.GOLD:
-                    characterGold += Gold();
+                case Gold:
+                    characterGold += Gold;
                     break;
 		default:
  break;

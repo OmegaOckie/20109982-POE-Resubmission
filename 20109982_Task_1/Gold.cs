@@ -11,7 +11,6 @@ namespace _20109982_Task_1
     /// </summary>
     class Gold : Item
     {
-        Map myMap = new Map();
         private int amountOfGold;
         public int goldDrop
         {
@@ -29,8 +28,15 @@ namespace _20109982_Task_1
 
         public Gold (int xPosition, int yPosition) : base(xPosition, yPosition)
         {
-             amountOfGold = rng.Next(6);
+            Map[,] myMap = new Map[];
+
+            amountOfGold = rng.Next(6);
              myMap.mapItemsArr[xPosition,yPosition] = amountOfGold;
+        }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
         }
     }
 }

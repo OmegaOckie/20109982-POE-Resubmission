@@ -30,10 +30,27 @@ namespace _20109982_Task_1
         /// <returns></returns>
         public override string ToString()
         {
-            return $"Player Stats:" +
-                            $"HP: {HP}" +
-                            $"Damage: {damage}" +
+            bool barehanded = true;
+            if (barehanded)
+            {
+                return $"Player Stats:" +
+                                $"HP: {HP}/{maxHP}" +
+                                $"Current Weapon: Bare Hands" +
+                                $"Weapon Range: {1}" +
+                                $"Weapon Damage: {damage}" +
                             $"[{X}, {Y}]";
+            }
+            else
+            {
+                return $"Player Stats:" +
+                $"HP: {HP}/{maxHP}" +
+                $"Current Weapon: {Weapon.TileType.WEAPON}" +
+                $"Weapon Range: {1}" +
+                $"Weapon Damage: {damage}" +
+                $"Durability: 4" +
+            $"[{X}, {Y}]";
+            }
+
         }
     }
 }
