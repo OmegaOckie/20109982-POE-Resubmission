@@ -11,17 +11,46 @@ namespace _20109982_Task_1
     /// </summary>
     abstract class Character : Tile
     {
+
+        /// <summary>
+        /// Q.2.2 List of available movement.
+        /// </summary>
         public enum Movement
         {
             NONE, UP, DOWN, LEFT, RIGHT
         }
+
+        /// <summary>
+        /// The HP of the character.
+        /// </summary>
         protected int HP { get; set; }
+
+        /// <summary>
+        /// The Max HP of the Character
+        /// </summary>
         protected int maxHP { get; set; } 
+
+        /// <summary>
+        /// The damage a character can do.
+        /// </summary>
         protected int damage { get; set; }
+
+        /// <summary>
+        /// An array that is used to check for valid movement.
+        /// </summary>
         protected Tile[,] characterVisionArray;
+
+        /// <summary>
+        /// The amount of gold a character has.
+        /// </summary>
         public int characterGold;
 
-        //The start of Q.2.3
+        /// <summary>
+        /// Q.2.3 A constructor that delegates the settings of the variables to the Tile class.
+        /// </summary>
+        /// <param name="xInput"></param>
+        /// <param name="yInput"></param>
+        /// <param name="symbol"></param>
         public Character(int xInput,int yInput, char symbol) : base()
         {
             X = xInput;
@@ -41,11 +70,19 @@ namespace _20109982_Task_1
 
         }
 
+        /// <summary>
+        /// Q.2.3 Method that decreases a targets HP.
+        /// </summary>
+        /// <param name="target"></param>
         public virtual void Attack(Character target)
         {
             target.HP -= damage;
         }
 
+        /// <summary>
+        /// Q.2.3 Checks if a character is dead.
+        /// </summary>
+        /// <returns></returns>
         public bool isDead()
         {
             if(HP < 1)
@@ -58,7 +95,7 @@ namespace _20109982_Task_1
         }
 
         /// <summary>
-        /// Checks if a character is within range of it's target.
+        /// Q.2.3 Checks if a character is within range of it's target.
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
@@ -92,6 +129,10 @@ namespace _20109982_Task_1
                 return 1;
         }
 
+        /// <summary>
+        /// Edit's a unit's X and Y values to move it dufferent directions
+        /// </summary>
+        /// <param name="move"></param>
         public void Move(Movement move)
         { 
             //NONE, UP, DOWN, LEFT, RIGHT

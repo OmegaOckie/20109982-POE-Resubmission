@@ -6,10 +6,21 @@ using System.Threading.Tasks;
 
 namespace _20109982_Task_1
 {
+    /// <summary>
+    /// Q.2.4 The enemy class
+    /// </summary>
     abstract class Enemy : Character
     {
         protected Random rng = new Random();
 
+        /// <summary>
+        /// Q.2.4 The enemy Constructor
+        /// </summary>
+        /// <param name="xPosition"></param>
+        /// <param name="yPosition"></param>
+        /// <param name="enemyDamage"></param>
+        /// <param name="startingHP"></param>
+        /// <param name="symbol"></param>
         public Enemy(int xPosition, int yPosition, int enemyDamage, int startingHP, char symbol = 'E') : base(xPosition, yPosition, symbol)
         {
             X = xPosition;
@@ -18,10 +29,13 @@ namespace _20109982_Task_1
             HP = startingHP;
         }
 
+        /// <summary>
+        /// Q.2.4 Displays Movement
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            //Following line of code will throw errors since no Enemy Classes exist yet.
-            return "Enemy" + " at " + "[" + X + ", " + Y + "]" + "(" + damage + ")";
+            return $"{Enemy.TileType.ENEMY} at [{X},{Y}] ({damage} DMG)";
         }
     }
 

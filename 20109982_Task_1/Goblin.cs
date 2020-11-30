@@ -7,15 +7,24 @@ using System.Threading.Tasks;
 namespace _20109982_Task_1
 {
     /// <summary>
-    /// Q.2.5
+    /// Q.2.5 Goblin Class
     /// </summary>
     class Goblin : Enemy
     {
+        /// <summary>
+        /// Q.2.5 Goblin stat Constructor
+        /// </summary>
+        /// <param name="xPosition"></param>
+        /// <param name="yPosition"></param>
         public Goblin( int xPosition, int yPosition) : base(xPosition, yPosition, 1, 10, 'G')
         {
         }
 
-
+        /// <summary>
+        /// Q.2.5 Method returns a random direction.
+        /// </summary>
+        /// <param name="move"></param>
+        /// <returns></returns>
         public override Movement ReturnMove(Movement move = Movement.NONE)
         {
             int randomDirectionGenerator = rng.Next(5);
@@ -42,5 +51,7 @@ namespace _20109982_Task_1
             }
             return randomDirection;
         }
+
+
     }
 }

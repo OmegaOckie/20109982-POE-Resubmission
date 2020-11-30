@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace _20109982_Task_1
 {
-    //Testing initial commit for Task 2 POE
+    /// <summary>
+    /// Q.3.1 Map Class
+    /// </summary>
     class Map
     {
         /// <summary>
@@ -38,6 +40,16 @@ namespace _20109982_Task_1
             }
             }
 
+
+        /// <summary>
+        /// Q.3.1 The constructor for the Map class
+        /// </summary>
+        /// <param name="minimumWidth"></param>
+        /// <param name="maximumWidth"></param>
+        /// <param name="minimumHeight"></param>
+        /// <param name="maximumHeight"></param>
+        /// <param name="numberOfEnemies"></param>
+        /// <param name="amountOfGoldDrops"></param>
         public Map(int minimumWidth, int maximumWidth, int minimumHeight, int maximumHeight, int numberOfEnemies, int amountOfGoldDrops)
         {
 
@@ -59,6 +71,9 @@ namespace _20109982_Task_1
             mapItems[amountOfGoldDrops] = new Item[];
         }
 
+        /// <summary>
+        /// Q.3.1 Updates the vision array for each character.
+        /// </summary>
         public void UpdateVision()
         {
             Tile[,] tileTemp;
@@ -73,7 +88,7 @@ namespace _20109982_Task_1
                     {
                         if (k + temporaryVariable.Y > mapHeight || k + temporaryVariable.Y < 0) { continue; }
                         tileTemp[temporaryVariable.X + i, temporaryVariable.Y + k] = mapArray[temporaryVariable.X + i, temporaryVariable.Y + k];
-                        temporaryVariable.characterVision = tileTemp;
+                        //temporaryVariable.characterVision = tileTemp;
                     }
                 }
             }
@@ -124,6 +139,11 @@ namespace _20109982_Task_1
             return tempTile;
 
 
+        }
+
+        private void Gold(int randomX, int randomY)
+        {
+            throw new NotImplementedException();
         }
 
         public Item GetItemAtPosition(int x, int y){

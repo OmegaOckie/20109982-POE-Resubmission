@@ -48,7 +48,18 @@ namespace _20109982_Task_1
                 Y = value;
             }
         }
-        protected TileType tile { get; set; }
+        protected TileType tile;
+        public TileType tile_Accessor
+        {
+            get
+            {
+                return tile;
+            }
+            set
+            {
+                tile = value;
+            }
+        }
 
 
 
@@ -57,9 +68,9 @@ namespace _20109982_Task_1
         /// </summary>
         public Tile()
         {
-            X = 0;
-            Y = 0;
-            tile = TileType.HERO;
+            X = x;
+            Y = y;
+            tile_Accessor = TileType.HERO;
         }
 
         /// <summary>
@@ -69,6 +80,8 @@ namespace _20109982_Task_1
     {
             public Obstacle(int xInput, int yInput) : base()
             {
+                X = xInput;
+                Y = yInput;
                 Console.WriteLine("X");
             }
     }

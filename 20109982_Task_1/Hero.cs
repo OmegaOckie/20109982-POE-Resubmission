@@ -11,7 +11,6 @@ namespace _20109982_Task_1
     /// </summary>
     class Hero : Character
     {
-        Character myCharacter = new Character();
         public Hero(int xInput,int yInput, int HP,char symbol) : base(xInput, yInput, 'H')
         {
 
@@ -25,14 +24,16 @@ namespace _20109982_Task_1
             return Movement.NONE;
         }
 
+        /// <summary>
+        /// Q.2.6 Returns the formatted Player Stats
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-
-            return "Player Stats:\n"
-                + "HP: " + maxHP
-                + "Damage: " + 2
-                + "Gold Collected: " + myCharacter.characterGold + 
-                + "[" + X + ", " + Y + "]";
+            return $"Player Stats:" +
+                            $"HP: {HP}" +
+                            $"Damage: {damage}" +
+                            $"[{X}, {Y}]";
         }
     }
 }
