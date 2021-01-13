@@ -20,6 +20,15 @@ namespace _20109982_Task_1
         {
         }
 
+        public Movement getRandomMove()
+        {
+            Movement selectedMove = Movement.NONE;
+            Array values = Enum.GetValues(typeof(Movement));
+            Random random = new Random();
+            selectedMove = (Movement)values.GetValue(random.Next(values.Length));
+            return selectedMove;
+        }
+
         /// <summary>
         /// Q.2.5 Method returns a random direction.
         /// </summary>

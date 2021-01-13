@@ -8,16 +8,33 @@ using System.Threading.Tasks;
 
 namespace _20109982_Task_1
 {
+    [Serializable]
     /// <summary>
-    /// Q.3.1 Map Class
+    /// Task 1 Q.3.1 Map Class
     /// </summary>
     class Map
     {
         /// <summary>
-        /// Q.3.1 The variables are declared here.
+        /// Task 1 Q.3.1 The variables are declared here.
         /// </summary>
         protected Tile[,] mapArray;
+        public Tile[,] mapArrayAccessor
+        {
+            get
+            {
+                return mapArray;
+            }
+
+        }
         protected Hero myHero;
+        public Hero hero
+        {
+            get
+            {
+                return myHero;
+            }
+
+        }
         protected Enemy[] myEnemies;
         public Enemy[] myEnemiesArr
         {
@@ -58,6 +75,27 @@ namespace _20109982_Task_1
             int mapHeight = rng.Next(minimumHeight, maximumHeight);
 
             mapArray = new Tile[mapWidth, mapHeight];
+            for (int y = 0; y < mapHeight; y++)
+            {
+                for (int x = 0; x < mapWidth; x++)
+                {
+                    if (y == 0 || y == mapHeight - 1)
+                    {
+                        mapArray[x, y] = new Obstacle(x, y);
+                    }
+                    else
+                    {
+                        if (x == 0 || x == mapWidth - 1)
+                        {
+                            mapArray[x, y] = new Obstacle(x, y);
+                        }
+                        else
+                        {
+                            mapArray[x, y] = new EmptyTile(x, y);
+                        }
+                    }
+                }
+            }
             myEnemies = new Enemy[(mapWidth + mapHeight) / 3];
 
             myHero = (Hero)Create(Tile.TileType.HERO);
@@ -68,13 +106,20 @@ namespace _20109982_Task_1
             }
             UpdateVision();
 
-            mapItems[amountOfGoldDrops] = new Item[];
+            //mapItems[amountOfGoldDrops] = new Item[];
         }
 
         public Map()
         {
         }
 
+        public void UpdateMap()
+        {
+            foreach (Tile item in mapArray)
+            {
+                mapArray[item.X, item.Y] = item;
+            }
+        }
         /// <summary>
         /// Q.3.1 Updates the vision array for each character.
         /// </summary>
@@ -142,7 +187,19 @@ namespace _20109982_Task_1
                     int weaponType = rng.Next(4);
                     if (weaponType <= 1)
                     {
-                        tempTile = new ();
+                        tempTile = new MeleeWeapon(randomX, randomY, 'D', MeleeWeapon.Types.DAGGER);
+                    }
+                    else if (weaponType <= 2)
+                    {
+                        tempTile = new MeleeWeapon(randomX, randomY, 'S', MeleeWeapon.Types.LONGSWORD);
+                    }
+                    else if (weaponType <= 3)
+                    {
+                        tempTile = new RangedWeapon(randomX, randomY, 'R', RangedWeapon.Types.RIFLE);
+                    }
+                    else if (weaponType <= 4)
+                    {
+                        tempTile = new RangedWeapon(randomX, randomY, 'B', RangedWeapon.Types.LONGBOW);
                     }
                     break;
                 default:
@@ -159,8 +216,16 @@ namespace _20109982_Task_1
             throw new NotImplementedException();
         }
 
-        public Item GetItemAtPosition(int x, int y){
-
+        public Item GetItemAtPosition(int x, int y)
+        {
+            try
+            {
+                return (Item)mapArray[x, y];
+            }
+            catch (InvalidCastException e)
+            {
+            }
+            return null;
         }
     }
 }

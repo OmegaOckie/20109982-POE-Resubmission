@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace _20109982_Task_1
 {
     /// <summary>
-    /// Q.2.2
+    /// Task 1 Q.2.2
     /// </summary>
     abstract class Character : Tile
     {
 
         /// <summary>
-        /// Q.2.2 List of available movement.
+        /// Task 1 Q.2.2 List of available movement.
         /// </summary>
         public enum Movement
         {
@@ -104,12 +104,15 @@ namespace _20109982_Task_1
 
             //Unable to calculate range if there is no way to find where the origin point is in acoordance with the target point
             int distanceToTarget = DistanceTo(target);
-            bool bareHanded = true;
-            if (bareHanded)
+
+            if (distanceToTarget <= 1)
             {
-                distanceToTarget = 1;
+                return true;
             }
-            return true;
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -119,14 +122,56 @@ namespace _20109982_Task_1
         /// <returns></returns>
         private int DistanceTo(Character target)
         {
+            int distanceX, distanceY, tempX, tempY;
+            distanceX = 0;
+            distanceY = 0;
+            bool isPosititiveOrNegative;
+            if (target.X > X) 
+            {
+                isPosititiveOrNegative = true; 
+            } 
+            else 
+            { 
+                isPosititiveOrNegative = false; 
+            }
+            tempX = X;
+            while (tempX != target.X)
+            {
+                if (isPosititiveOrNegative)
+                {
+                    tempX++;
+                    distanceX++;
+                }
+                else
+                {
+                    tempX--;
+                    distanceX++;
+                }
+            }
+            if (target.Y > Y) 
+            { 
+                isPosititiveOrNegative = true; 
+            } 
+            else 
+            { 
+                isPosititiveOrNegative = false; 
+            }
+            tempY = Y;
+            while (tempY != target.Y)
+            {
+                if (isPosititiveOrNegative)
+                {
+                    tempY++;
+                    distanceY++;
+                }
+                else
+                {
+                    tempY--;
+                    distanceY++;
+                }
+            }
+            return distanceX + distanceY;
 
-            
-            //The target's coordinates
-            int targetXPos, targetYPos;
-            targetXPos = target.X;
-            targetYPos = target.Y;
-
-                return 1;
         }
 
         /// <summary>
@@ -169,11 +214,11 @@ namespace _20109982_Task_1
         public void Pickup(Item i){
             switch (i)
 	{
-                case Gold:
-                    characterGold += Gold;
+                case Gold gold:
+                    characterGold += gold.goldDrop;
                     break;
-		default:
- break;
+                default:
+                    break;
 	}
         }
 

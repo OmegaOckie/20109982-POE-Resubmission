@@ -14,7 +14,7 @@ namespace _20109982_Task_1
         protected Random rng = new Random();
 
         /// <summary>
-        /// Q.2.4 The enemy Constructor
+        /// Task 1 Q.2.4 The enemy Constructor
         /// </summary>
         /// <param name="xPosition"></param>
         /// <param name="yPosition"></param>
@@ -79,13 +79,79 @@ namespace _20109982_Task_1
         {
         }
 
+        public Movement getRandomMove()
+        {
+            Movement selectedMove = Movement.NONE;
+            Array values = Enum.GetValues(typeof(Movement));
+            Random random = new Random();
+            selectedMove = (Movement)values.GetValue(random.Next(values.Length));
+            return selectedMove;
+        }
+
         public override Movement ReturnMove(Movement move = Movement.NONE)
         {
-            if (Leader_Target_Accessor = Hero)
+            Movement selectedMove = getRandomMove();
+            int x, y;
+            x = 0;
+            y = 0;
+            switch (selectedMove)
             {
-
+                case Movement.NONE:
+                    selectedMove = Movement.NONE;
+                    break;
+                case Movement.UP:
+                    x = 0;
+                    y = 1;
+                    break;
+                case Movement.DOWN:
+                    x = 0;
+                    y = -1;
+                    break;
+                case Movement.LEFT:
+                    x = -1;
+                    y = 0;
+                    break;
+                case Movement.RIGHT:
+                    x = 1;
+                    y = 0;
+                    break;
+                default:
+                    selectedMove = Movement.NONE;
+                    break;
             }
-            throw new NotImplementedException();
+
+            while (base.characterVision[x, y] != null)
+            {
+                selectedMove = getRandomMove();
+                switch (selectedMove)
+                {
+                    case Movement.NONE:
+                        selectedMove = Movement.NONE;
+                        break;
+                    case Movement.UP:
+                        x = 0;
+                        y = 1;
+                        break;
+                    case Movement.DOWN:
+                        x = 0;
+                        y = -1;
+                        break;
+                    case Movement.LEFT:
+                        x = -1;
+                        y = 0;
+                        break;
+                    case Movement.RIGHT:
+                        x = 1;
+                        y = 0;
+                        break;
+                    default:
+                        selectedMove = Movement.NONE;
+                        break;
+                }
+            }
+
+            return selectedMove;
+
         }
     }
 }
