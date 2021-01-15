@@ -26,7 +26,7 @@ namespace _20109982_Task_1
         {
             get
             {
-                return Range;
+                return 1;
             }
             set
             {

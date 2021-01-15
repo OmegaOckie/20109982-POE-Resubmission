@@ -44,6 +44,13 @@ namespace _20109982_Task_1
             }
         }
         protected int mapWidth;
+        public int mapWidthAccessor
+        {
+            get
+            {
+                return mapWidth;
+            }
+        };
         protected int mapHeight;
         protected Random rng = new Random();
         protected Item[] mapItems;

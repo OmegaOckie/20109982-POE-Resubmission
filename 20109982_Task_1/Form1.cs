@@ -85,9 +85,53 @@ namespace _20109982_Task_1
             int rng7 = random.Next(6);
             Map = new Map(rng1, rng2, rng3, rng4, rng5, rng6, rng7);
             gameEng = new GameEngine(Map);
-            border = gameEng.map.map - 1;
+            border = gameEng.map.mapWidthAccessor - 1;
             updateMap();
-            heroName_LB.Text = Convert.ToString(heroName_TB.Text);
+            heroNameTextBox.Text = Convert.ToString(heroNameTextBox.Text);
+        }
+
+        private void updateMap()
+        {
+             ;
+            string newLine;
+            heroStats_LB.Text = gameEng.map.hero.ToString();
+
+            // This updates the map every time we move 
+            for (int y = 0; y < gameEng.map.MapHeightGrab; y++)
+            {
+                if (y != 0) { map.Text += "\n"; };
+                for (int x = 0; x < gameEng.map.MapWidthGrab; x++)
+                {
+                    switch (gameEng.map.MapGrab[x, y])
+                    {
+                        case EmptyTile _:
+                            map.Text += "_";
+                            break;
+                        case Obstacle _:
+                            map.Text += "X";
+                            break;
+                        case Hero _:
+                            map.Text += "H";
+                            break;
+                        case Gold _:
+                            map.Text += "G";
+                            break;
+                        case Goblin _:
+                            map.Text += "K";
+                            break;
+                        case Mage _:
+                            map.Text += "M";
+                            break;
+                        case Leader _:
+                            map.Text += "L";
+                            break;
+                        case Weapon _:
+                            map.Text += "W";
+                            break;
+
+                    }
+                }
+            }
         }
     }
 }
