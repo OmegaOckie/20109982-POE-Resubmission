@@ -58,15 +58,17 @@ namespace _20109982_Task_1
                 Leader_Target = value;
             }
         }
+
+        private Character leaderTargetCharacter;
         public Tile Leader_Target_Accessor
         {
             get
             {
-                return Leader_Target;
+                return leaderTargetCharacter;
             }
             set
             {
-                Leader_Target = value;
+                Leader_Target = leaderTargetCharacter;
             }
         }
 
@@ -90,6 +92,10 @@ namespace _20109982_Task_1
 
         public override Movement ReturnMove(Movement move = Movement.NONE)
         {
+            if (Leader_Target_Accessor.X < X)
+            {
+
+            }
             Movement selectedMove = getRandomMove();
             int x, y;
             x = 0;
@@ -97,23 +103,20 @@ namespace _20109982_Task_1
             switch (selectedMove)
             {
                 case Movement.NONE:
-                    selectedMove = Movement.NONE;
+                    x += 0;
+                    y += 0;
                     break;
                 case Movement.UP:
-                    x = 0;
-                    y = 1;
+                    y += 1;
                     break;
                 case Movement.DOWN:
-                    x = 0;
-                    y = -1;
+                    y += -1;
                     break;
                 case Movement.LEFT:
-                    x = -1;
-                    y = 0;
+                    x += -1;
                     break;
                 case Movement.RIGHT:
-                    x = 1;
-                    y = 0;
+                    x += 1;
                     break;
                 default:
                     selectedMove = Movement.NONE;
@@ -126,23 +129,20 @@ namespace _20109982_Task_1
                 switch (selectedMove)
                 {
                     case Movement.NONE:
-                        selectedMove = Movement.NONE;
+                        x += 0;
+                        y += 0;
                         break;
                     case Movement.UP:
-                        x = 0;
-                        y = 1;
+                        y += 1;
                         break;
                     case Movement.DOWN:
-                        x = 0;
-                        y = -1;
+                        y += -1;
                         break;
                     case Movement.LEFT:
-                        x = -1;
-                        y = 0;
+                        x += -1;
                         break;
                     case Movement.RIGHT:
-                        x = 1;
-                        y = 0;
+                        x += 1;
                         break;
                     default:
                         selectedMove = Movement.NONE;
