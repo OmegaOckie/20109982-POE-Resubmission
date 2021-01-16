@@ -18,13 +18,13 @@ namespace _20109982_Task_1
         //The constructor for the class
         public Shop(Character buyer)
         {
-            Weapon[] WeaponArr = new Weapon[3];
-            Random rng;
 
-            foreach (var item in WeaponArr)
+            for (int i = 0; i < WeaponArr.Length; i++)
             {
-                RandomWeapon();
+                WeaponArr[i] = RandomWeapon();
             }
+
+
         }
 
         /// <summary>
@@ -38,18 +38,19 @@ namespace _20109982_Task_1
             MeleeWeapon longsword = new MeleeWeapon(Convert.ToInt32(rng), Convert.ToInt32(rng), 's', MeleeWeapon.Types.LONGSWORD);
             RangedWeapon longbow = new RangedWeapon(Convert.ToInt32(rng), Convert.ToInt32(rng), 'b', RangedWeapon.Types.LONGBOW);
             RangedWeapon rifle = new RangedWeapon(Convert.ToInt32(rng), Convert.ToInt32(rng), 'D', RangedWeapon.Types.RIFLE);
+
             switch (Convert.ToInt32(rng))
             {
-                case 1:
+                case 0:
                 return dagger;
                     break;
-                case 2:
+                case 1:
                     return longsword;
                     break;
-                case 3:
+                case 2:
                     return longbow;
                     break;
-                case 4:
+                case 3:
                     return rifle;
                     break;
                 default:
