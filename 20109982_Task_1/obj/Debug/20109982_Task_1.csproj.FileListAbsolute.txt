@@ -3,3 +3,8 @@ C:\Users\ockie\Source\Repos\20109982-POE-Resubmission\20109982_Task_1\obj\Debug\
 C:\Users\ockie\Source\Repos\20109982-POE-Resubmission\20109982_Task_1\obj\Debug\_20109982_Task_1.Properties.Resources.resources
 C:\Users\ockie\Source\Repos\20109982-POE-Resubmission\20109982_Task_1\obj\Debug\20109982_Task_1.csproj.GenerateResource.cache
 C:\Users\ockie\Source\Repos\20109982-POE-Resubmission\20109982_Task_1\obj\Debug\20109982_Task_1.csproj.CoreCompileInputs.cache
+C:\Users\ockie\source\repos\20109982-POE-Resubmission\20109982_Task_1\bin\Debug\20109982_Task_1.exe.config
+C:\Users\ockie\source\repos\20109982-POE-Resubmission\20109982_Task_1\bin\Debug\20109982_Task_1.exe
+C:\Users\ockie\source\repos\20109982-POE-Resubmission\20109982_Task_1\bin\Debug\20109982_Task_1.pdb
+C:\Users\ockie\source\repos\20109982-POE-Resubmission\20109982_Task_1\obj\Debug\20109982_Task_1.exe
+C:\Users\ockie\source\repos\20109982-POE-Resubmission\20109982_Task_1\obj\Debug\20109982_Task_1.pdb

@@ -92,7 +92,7 @@ namespace _20109982_Task_1
 
         public override Movement ReturnMove(Movement move = Movement.NONE)
         {
-            if (Leader_Target_Accessor.X < X)
+            if (leaderTargetCharacter.X < X)
             {
                 X -= 1;
             }

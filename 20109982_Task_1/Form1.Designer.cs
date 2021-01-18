@@ -84,6 +84,7 @@
             this.heroNameTextBox.Name = "heroNameTextBox";
             this.heroNameTextBox.Size = new System.Drawing.Size(100, 26);
             this.heroNameTextBox.TabIndex = 3;
+            this.heroNameTextBox.Text = "John Doe";
             // 
             // saveNameButton
             // 

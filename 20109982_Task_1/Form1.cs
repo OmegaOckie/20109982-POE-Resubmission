@@ -70,20 +70,20 @@ namespace _20109982_Task_1
         private void startButton_Click(object sender, EventArgs e)
         {
             //Determines the minimum width
-            int rng1 = random.Next(1, 11);
+            int minimumWidthRNG = random.Next(1, 11);
             //Determines the maximum width
-            int rng2 = random.Next(11, 21);
+            int maximumWidthRNG = random.Next(11, 21);
             //Determines the minimum height
-            int rng3 = random.Next(1, 11);
+            int minimumHeightRNG = random.Next(1, 11);
             //Determines the maximum height
-            int rng4 = random.Next(11, 21);
+            int maximumHeightRNG = random.Next(11, 21);
             //Determines the amount of enemies spawning
-            int rng5 = random.Next(6);
+            int spawnableEnemmiesRNG = random.Next(6);
             //Determines the amount of gold spawning
-            int rng6 = random.Next(1, 6);
+            int spawnableGoldRNG = random.Next(1, 6);
             //Determines the amount of weapons supposed to spawn.
-            int rng7 = random.Next(6);
-            Map = new Map(rng1, rng2, rng3, rng4, rng5, rng6, rng7);
+            int spawnableWeaponsRNG = random.Next(6);
+            Map = new Map(minimumWidthRNG, maximumWidthRNG, minimumHeightRNG, maximumHeightRNG, spawnableEnemmiesRNG, spawnableGoldRNG, spawnableWeaponsRNG);
             gameEng = new GameEngine(Map);
             border = gameEng.map.mapWidthAccessor - 1;
             updateMap();

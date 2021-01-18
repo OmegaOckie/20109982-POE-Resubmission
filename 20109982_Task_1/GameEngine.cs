@@ -39,7 +39,7 @@ namespace _20109982_Task_1
         }
         public bool MovePlayer(Character.Movement direction)
         {
-            int x, y, tempx, tempy;
+            int x, y;
             x = this.Map.hero.X;
             y = this.Map.hero.Y;
 
@@ -50,23 +50,23 @@ namespace _20109982_Task_1
                     break;
 
                 case Movement.UP:
-                    x = 0;
-                    y = -1;
+                    x += 0;
+                    y += -1;
                     break;
 
                 case Movement.DOWN:
-                    x = 0;
-                    y = 1;
+                    x += 0;
+                    y += 1;
                     break;
 
                 case Movement.LEFT:
-                    x = -1;
-                    y = 0;
+                    x += -1;
+                    y += 0;
                     break;
 
                 case Movement.RIGHT:
-                    x = 1;
-                    y = 0;
+                    x += 1;
+                    y += 0;
                     break;
 
                 default:
