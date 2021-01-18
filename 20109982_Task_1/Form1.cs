@@ -57,7 +57,7 @@ namespace _20109982_Task_1
             }
             if (keyData == Keys.Space)
             {
-                attack_BTN.PerformClick();
+                attackButton.PerformClick();
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
@@ -94,39 +94,39 @@ namespace _20109982_Task_1
         {
              ;
             string newLine;
-            heroStats_LB.Text = gameEng.map.hero.ToString();
+            heroStatsLabel.Text = gameEng.map.hero.ToString();
 
             // This updates the map every time we move 
-            for (int y = 0; y < gameEng.map.MapHeightGrab; y++)
+            for (int y = 0; y < gameEng.map.mapHeightAccessor; y++)
             {
-                if (y != 0) { map.Text += "\n"; };
-                for (int x = 0; x < gameEng.map.MapWidthGrab; x++)
+                if (y != 0) { gameMapLabel.Text += "\n"; };
+                for (int x = 0; x < gameEng.map.mapWidthAccessor; x++)
                 {
-                    switch (gameEng.map.MapGrab[x, y])
+                    switch (gameEng.map.mapAccessor[x, y])
                     {
                         case EmptyTile _:
-                            map.Text += "_";
+                            gameMapLabel.Text += "_";
                             break;
                         case Obstacle _:
-                            map.Text += "X";
+                            gameMapLabel.Text += "X";
                             break;
                         case Hero _:
-                            map.Text += "H";
+                            gameMapLabel.Text += "H";
                             break;
                         case Gold _:
-                            map.Text += "G";
+                            gameMapLabel.Text += "G";
                             break;
                         case Goblin _:
-                            map.Text += "K";
+                            gameMapLabel.Text += "K";
                             break;
                         case Mage _:
-                            map.Text += "M";
+                            gameMapLabel.Text += "M";
                             break;
                         case Leader _:
-                            map.Text += "L";
+                            gameMapLabel.Text += "L";
                             break;
                         case Weapon _:
-                            map.Text += "W";
+                            gameMapLabel.Text += "W";
                             break;
 
                     }

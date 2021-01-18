@@ -24,14 +24,11 @@ namespace _20109982_Task_1
             }
         }
 
-        private Random rng = new Random();
+        private Random randomGoldAmount = new Random();
 
         public Gold (int xPosition, int yPosition) : base(xPosition, yPosition)
         {
-            Map[,] myMap = new Map[];
-
-            amountOfGold = rng.Next(6);
-             myMap.mapItemsArr[xPosition,yPosition] = amountOfGold;
+            amountOfGold = randomGoldAmount.Next(1,6);
         }
 
         public override string ToString()

@@ -18,6 +18,7 @@ namespace _20109982_Task_1
         /// Task 1 Q.3.1 The variables are declared here.
         /// </summary>
         protected Tile[,] mapArray;
+        public Tile[,] mapAccessor;
         public Tile[,] mapArrayAccessor
         {
             get
@@ -52,6 +53,13 @@ namespace _20109982_Task_1
             }
         }
         protected int mapHeight;
+        public int mapHeightAccessor
+        {
+            get
+            {
+                return mapWidth;
+            }
+        }
         protected Random rng = new Random();
         protected Item[] mapItems;
         public Item[] mapItemsArr
