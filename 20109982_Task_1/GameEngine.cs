@@ -43,11 +43,10 @@ namespace _20109982_Task_1
             x = this.Map.hero.X;
             y = this.Map.hero.Y;
 
-            Character.Movement selectedMove = direction;
-            switch (selectedMove)
+            switch (direction)
             {
                 case Movement.NONE:
-                    selectedMove = Movement.NONE;
+                    direction = Movement.NONE;
                     break;
 
                 case Movement.UP:
@@ -71,17 +70,17 @@ namespace _20109982_Task_1
                     break;
 
                 default:
-                    selectedMove = Movement.NONE;
+                    direction = Movement.NONE;
                     break;
             }
 
-            // Check for valid move
+            // Check if the move is valid
 
             if (Map.mapArrayAccessor[Map.hero.X + x, Map.hero.Y + y] is EmptyTile || Map.GetItemAtPosition(Map.hero.X + x, Map.hero.Y + y) is Gold)
             {
-                // Valid
+                // if it is valid
 
-                Map.hero.Move(selectedMove);
+                Map.hero.Move(direction);
                 Map.UpdateMap();
                 Map.mapArrayAccessor[Map.hero.X - x, Map.hero.Y - y] = new EmptyTile(Map.hero.X - x, Map.hero.Y - y);
                 return true;

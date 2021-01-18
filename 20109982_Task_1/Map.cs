@@ -50,7 +50,7 @@ namespace _20109982_Task_1
             {
                 return mapWidth;
             }
-        };
+        }
         protected int mapHeight;
         protected Random rng = new Random();
         protected Item[] mapItems;

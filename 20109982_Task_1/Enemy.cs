@@ -94,7 +94,7 @@ namespace _20109982_Task_1
         {
             if (Leader_Target_Accessor.X < X)
             {
-
+                X -= 1;
             }
             Movement selectedMove = getRandomMove();
             int x, y;
