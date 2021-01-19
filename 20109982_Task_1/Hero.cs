@@ -11,7 +11,7 @@ namespace _20109982_Task_1
     /// </summary>
     class Hero : Character
     {
-        public Hero(int xInput,int yInput, int HP,char symbol) : base(xInput, yInput, 'H')
+        public Hero(int xInput, int yInput, int HP, char symbol) : base(xInput, yInput, 'H')
         {
 
             this.HP = HP;
@@ -21,7 +21,50 @@ namespace _20109982_Task_1
 
         public override Movement ReturnMove(Movement move = Movement.NONE)
         {
-            return Movement.NONE;
+            int x, y;
+            x = 0;
+            y = 0;
+            Movement selectedMove = move;
+            switch (selectedMove)
+            {
+                case Movement.NONE:
+                    selectedMove = Movement.NONE;
+                    break;
+
+                case Movement.UP:
+                    x = 0;
+                    y = 1;
+                    break;
+
+                case Movement.DOWN:
+                    x = 0;
+                    y = -1;
+                    break;
+
+                case Movement.LEFT:
+                    x = -1;
+                    y = 0;
+                    break;
+
+                case Movement.RIGHT:
+                    x = 1;
+                    y = 0;
+                    break;
+
+                default:
+                    selectedMove = Movement.NONE;
+                    break;
+            }
+
+            if (base.characterVision[x, y] is EmptyTile)
+            {
+                return selectedMove;
+            }
+            else
+            {
+                return Movement.NONE;
+            }
+
         }
 
         /// <summary>
@@ -34,11 +77,11 @@ namespace _20109982_Task_1
             if (barehanded)
             {
                 return $"Player Stats:" +
-                                $"HP: {HP}/{maxHP}" +
-                                $"Current Weapon: Bare Hands" +
-                                $"Weapon Range: {1}" +
-                                $"Weapon Damage: {damage}" +
-                            $"[{X}, {Y}]";
+                                $"\nHP: {HP}/{maxHP}" +
+                                $"\nCurrent Weapon: Bare Hands" +
+                                $"\nWeapon Range: {1}" +
+                                $"\nWeapon Damage: {damage}" +
+                            $"\n[{X}, {Y}]";
             }
             else
             {

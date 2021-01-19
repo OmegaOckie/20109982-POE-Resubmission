@@ -14,11 +14,10 @@ namespace _20109982_Task_1
     /// </summary>
     class Map
     {
-        /// <summary>
-        /// Task 1 Q.3.1 The variables are declared here.
-        /// </summary>
+
+        // Task 1 Q.3.1 The variables are declared here.
+
         private Tile[,] mapArray;
-        public Tile[,] mapAccessor;
         public Tile[,] mapArrayAccessor
         {
             get
@@ -27,6 +26,7 @@ namespace _20109982_Task_1
             }
 
         }
+
         protected Hero myHero;
         public Hero hero
         {
@@ -36,14 +36,16 @@ namespace _20109982_Task_1
             }
 
         }
+
         protected Enemy[] myEnemies;
         public Enemy[] myEnemiesArr
         {
-            get 
+            get
             {
                 return myEnemies;
             }
         }
+
         protected int mapWidth;
         public int mapWidthAccessor
         {
@@ -52,6 +54,7 @@ namespace _20109982_Task_1
                 return mapWidth;
             }
         }
+
         protected int mapHeight;
         public int mapHeightAccessor
         {
@@ -60,17 +63,20 @@ namespace _20109982_Task_1
                 return mapWidth;
             }
         }
+
         protected Random rng = new Random();
         protected Item[] mapItems;
         public Item[] mapItemsArr
+        {
+            get
             {
-        get{
-            return mapItems;
+                return mapItems;
             }
-            set{
-            mapItems = value;
+            set
+            {
+                mapItems = value;
             }
-            }
+        }
 
 
         /// <summary>
@@ -96,41 +102,35 @@ namespace _20109982_Task_1
                 {
                     if (y == 0 || y == mapHeight - 1)
                     {
-                        mapArray[x, y] = new Obstacle(x, y);
+                        mapArray[x, y] = new Tile.Obstacle(x, y);
                     }
                     else
                     {
                         if (x == 0 || x == mapWidth - 1)
                         {
-                            mapArray[x, y] = new Obstacle(x, y);
+                            mapArray[x, y] = new Tile.Obstacle(x, y);
                         }
                         else
                         {
-                            mapArray[x, y] = new EmptyTile(x, y);
+                            mapArray[x, y] = new Tile.EmptyTile(x, y);
                         }
                     }
                 }
             }
             myEnemies = new Enemy[(mapWidth + mapHeight) / 3];
 
-            myHero = (Hero)Create(Tile.TileType.HERO);
-
             for (int i = 0; i < myEnemies.Count(); i++)
             {
                 myEnemies[i] = (Enemy)Create(Tile.TileType.ENEMY);
             }
-            for (int i = 0; i < amountOfGoldDrops; i++)
-            {
-                myEnemies[i] = (Enemy)Create(Tile.TileType.ENEMY);
-            }
+
+
             UpdateVision();
+            myHero = (Hero)Create(type: Tile.TileType.HERO);
 
             //mapItems[amountOfGoldDrops] = new Item[];
         }
 
-        public Map()
-        {
-        }
 
         public void UpdateMap()
         {
@@ -147,7 +147,7 @@ namespace _20109982_Task_1
             Tile[,] tileTemp;
             tileTemp = new Tile[mapWidth, mapHeight];
 
-            foreach (Tile temporaryVariable in myEnemies)
+            foreach (Enemy temporaryVariable in myEnemies)
             {
                 for (int i = -1; i < 2; i++)
                 {
@@ -166,14 +166,15 @@ namespace _20109982_Task_1
         {
             int counter = 0;
             Tile tempTile = null;
-            int randomX = rng.Next(1, mapWidth);
-            int randomY = rng.Next(1, mapHeight);
+            int randomX = rng.Next(1, mapWidth -1);
+            int randomY = rng.Next(1, mapHeight -1);
+            int gold = rng.Next(1, 6);
             int heroHP = 0;
             char heroSymbol = 'H';
             while (mapArray[randomX, randomY] != null)
             {
-                 randomX = rng.Next(1, mapWidth);
-                 randomY = rng.Next(1, mapHeight);
+                randomX = rng.Next(1, mapWidth);
+                randomY = rng.Next(1, mapHeight);
             }
 
             switch (type)
@@ -181,14 +182,14 @@ namespace _20109982_Task_1
 
                 case Tile.TileType.HERO:
 
-                    tempTile = new Hero(randomX, randomY, heroHP, heroSymbol);
+                    tempTile = new Hero(randomX, randomY, heroHP, 'H');
                     break;
                 case Tile.TileType.ENEMY:
                     int enemyType = rng.Next(4);
                     if (enemyType <= 1)
-	{
+                    {
                         tempTile = new Mage(randomX, randomY);
-	}
+                    }
                     else if (enemyType == 2)
                     {
                         tempTile = new Goblin(randomX, randomY);
@@ -197,7 +198,7 @@ namespace _20109982_Task_1
                     {
                         tempTile = new Leader(randomX, randomY);
                     }
-	
+
                     break;
                 case Tile.TileType.GOLD:
                     Gold(randomX, randomY);

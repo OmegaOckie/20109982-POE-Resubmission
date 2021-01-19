@@ -102,7 +102,7 @@ namespace _20109982_Task_1
                 if (y != 0) { gameMapLabel.Text += "\n"; };
                 for (int x = 0; x < gameEng.map.mapWidthAccessor; x++)
                 {
-                    switch (gameEng.map.mapAccessor[x, y])
+                    switch (gameEng.map.mapArrayAccessor[x, y])
                     {
                         case Tile.EmptyTile _:
                             gameMapLabel.Text += "_";

@@ -24,7 +24,7 @@ namespace _20109982_Task_1
         }
 
         protected Map Map;
-        private string fileName = "Map.txt";
+        private const string fileName = "Map.txt";
 
         public Map map
         {
@@ -76,13 +76,13 @@ namespace _20109982_Task_1
 
             // Check if the move is valid
 
-            if (Map.mapArrayAccessor[Map.hero.X + x, Map.hero.Y + y] is EmptyTile || Map.GetItemAtPosition(Map.hero.X + x, Map.hero.Y + y) is Gold)
+            if (Map.mapArrayAccessor[Map.hero.X + x, Map.hero.Y + y] is Tile.EmptyTile || Map.GetItemAtPosition(Map.hero.X + x, Map.hero.Y + y) is Gold)
             {
                 // if it is valid
 
                 Map.hero.Move(direction);
                 Map.UpdateMap();
-                Map.mapArrayAccessor[Map.hero.X - x, Map.hero.Y - y] = new EmptyTile(Map.hero.X - x, Map.hero.Y - y);
+                Map.mapArrayAccessor[Map.hero.X - x, Map.hero.Y - y] = new Tile.EmptyTile(Map.hero.X - x, Map.hero.Y - y);
                 return true;
 
             }
