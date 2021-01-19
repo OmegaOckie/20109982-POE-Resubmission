@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gameMapLabel = new System.Windows.Forms.Label();
             this.nameHeroLabel = new System.Windows.Forms.Label();
             this.shopButton = new System.Windows.Forms.Button();
             this.heroNameTextBox = new System.Windows.Forms.TextBox();
             this.saveNameButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.heroNameDescriptorLabel = new System.Windows.Forms.Label();
             this.nameOfHeroLabel = new System.Windows.Forms.Label();
             this.heroStatsLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
@@ -43,17 +42,9 @@
             this.mapGroupBox = new System.Windows.Forms.GroupBox();
             this.attackButton = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.gameMapRichTextBox = new System.Windows.Forms.RichTextBox();
             this.mapGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gameMapLabel
-            // 
-            this.gameMapLabel.AutoSize = true;
-            this.gameMapLabel.Location = new System.Drawing.Point(6, 16);
-            this.gameMapLabel.Name = "gameMapLabel";
-            this.gameMapLabel.Size = new System.Drawing.Size(104, 13);
-            this.gameMapLabel.TabIndex = 0;
-            this.gameMapLabel.Text = "Xxxxxxxxxxxxxxxxxxx";
             // 
             // nameHeroLabel
             // 
@@ -96,15 +87,15 @@
             this.saveNameButton.Text = "Save Name";
             this.saveNameButton.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // heroNameDescriptorLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Hero Name";
+            this.heroNameDescriptorLabel.AutoSize = true;
+            this.heroNameDescriptorLabel.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.heroNameDescriptorLabel.Location = new System.Drawing.Point(12, 51);
+            this.heroNameDescriptorLabel.Name = "heroNameDescriptorLabel";
+            this.heroNameDescriptorLabel.Size = new System.Drawing.Size(115, 20);
+            this.heroNameDescriptorLabel.TabIndex = 5;
+            this.heroNameDescriptorLabel.Text = "Hero Name";
             // 
             // nameOfHeroLabel
             // 
@@ -172,7 +163,7 @@
             // 
             // mapGroupBox
             // 
-            this.mapGroupBox.Controls.Add(this.gameMapLabel);
+            this.mapGroupBox.Controls.Add(this.gameMapRichTextBox);
             this.mapGroupBox.Location = new System.Drawing.Point(280, 52);
             this.mapGroupBox.Name = "mapGroupBox";
             this.mapGroupBox.Size = new System.Drawing.Size(420, 274);
@@ -199,6 +190,14 @@
             this.listBox1.Size = new System.Drawing.Size(246, 108);
             this.listBox1.TabIndex = 14;
             // 
+            // gameMapRichTextBox
+            // 
+            this.gameMapRichTextBox.Location = new System.Drawing.Point(6, 19);
+            this.gameMapRichTextBox.Name = "gameMapRichTextBox";
+            this.gameMapRichTextBox.Size = new System.Drawing.Size(408, 249);
+            this.gameMapRichTextBox.TabIndex = 1;
+            this.gameMapRichTextBox.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,7 +212,7 @@
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.heroStatsLabel);
             this.Controls.Add(this.nameOfHeroLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.heroNameDescriptorLabel);
             this.Controls.Add(this.saveNameButton);
             this.Controls.Add(this.heroNameTextBox);
             this.Controls.Add(this.shopButton);
@@ -222,20 +221,17 @@
             this.Text = "Dungeon Diver";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.mapGroupBox.ResumeLayout(false);
-            this.mapGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label gameMapLabel;
         private System.Windows.Forms.Label nameHeroLabel;
         private System.Windows.Forms.Button shopButton;
         private System.Windows.Forms.TextBox heroNameTextBox;
         private System.Windows.Forms.Button saveNameButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label heroNameDescriptorLabel;
         private System.Windows.Forms.Label nameOfHeroLabel;
         private System.Windows.Forms.Label heroStatsLabel;
         private System.Windows.Forms.Button startButton;
@@ -245,6 +241,7 @@
         private System.Windows.Forms.GroupBox mapGroupBox;
         private System.Windows.Forms.Button attackButton;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.RichTextBox gameMapRichTextBox;
     }
 }
 

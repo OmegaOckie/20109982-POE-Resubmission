@@ -87,46 +87,46 @@ namespace _20109982_Task_1
             gameEng = new GameEngine(Map);
             border = gameEng.map.mapWidthAccessor - 1;
             updateMap();
-            heroNameTextBox.Text = Convert.ToString(heroNameTextBox.Text);
+            nameOfHeroLabel.Text = Convert.ToString(heroNameTextBox.Text);
         }
 
         private void updateMap()
         {
-             ;
+             gameMapRichTextBox.Clear();
             string newLine;
             heroStatsLabel.Text = gameEng.map.hero.ToString();
 
             // This updates the map every time we move 
             for (int y = 0; y < gameEng.map.mapHeightAccessor; y++)
             {
-                if (y != 0) { gameMapLabel.Text += "\n"; };
+                if (y != 0) { gameMapRichTextBox.Text += "\n"; };
                 for (int x = 0; x < gameEng.map.mapWidthAccessor; x++)
                 {
                     switch (gameEng.map.mapArrayAccessor[x, y])
                     {
                         case Tile.EmptyTile _:
-                            gameMapLabel.Text += "_";
+                            gameMapRichTextBox.Text += "_";
                             break;
                         case Tile.Obstacle _:
-                            gameMapLabel.Text += "X";
+                            gameMapRichTextBox.Text += "X";
                             break;
                         case Hero _:
-                            gameMapLabel.Text += "H";
+                            gameMapRichTextBox.Text += "H";
                             break;
                         case Gold _:
-                            gameMapLabel.Text += "G";
+                            gameMapRichTextBox.Text += "G";
                             break;
                         case Goblin _:
-                            gameMapLabel.Text += "K";
+                            gameMapRichTextBox.Text += "K";
                             break;
                         case Mage _:
-                            gameMapLabel.Text += "M";
+                            gameMapRichTextBox.Text += "M";
                             break;
                         case Leader _:
-                            gameMapLabel.Text += "L";
+                            gameMapRichTextBox.Text += "L";
                             break;
                         case Weapon _:
-                            gameMapLabel.Text += "W";
+                            gameMapRichTextBox.Text += "W";
                             break;
 
                     }

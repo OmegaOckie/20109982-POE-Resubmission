@@ -34,7 +34,7 @@ namespace _20109982_Task_1
             }
             set
             {
-                X = value;
+                x = value;
             }
         }
         public int Y
@@ -45,7 +45,7 @@ namespace _20109982_Task_1
             }
             set
             {
-                Y = value;
+                y = value;
             }
         }
 

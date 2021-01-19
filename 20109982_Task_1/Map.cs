@@ -92,8 +92,8 @@ namespace _20109982_Task_1
         {
 
             //Randomised the dimensions of the map.
-            int mapWidth = rng.Next(minimumWidth, maximumWidth);
-            int mapHeight = rng.Next(minimumHeight, maximumHeight);
+             mapWidth = rng.Next(minimumWidth, maximumWidth);
+             mapHeight = rng.Next(minimumHeight, maximumHeight);
 
             mapArray = new Tile[mapWidth, mapHeight];
             for (int y = 0; y < mapHeight; y++)
@@ -164,13 +164,11 @@ namespace _20109982_Task_1
 
         private Tile Create(Tile.TileType type)
         {
-            int counter = 0;
             Tile tempTile = null;
-            int randomX = rng.Next(1, mapWidth -1);
-            int randomY = rng.Next(1, mapHeight -1);
+            int randomX = rng.Next(0, mapWidth -1);
+            int randomY = rng.Next(0, mapHeight -1);
             int gold = rng.Next(1, 6);
             int heroHP = 0;
-            char heroSymbol = 'H';
             while (mapArray[randomX, randomY] != null)
             {
                 randomX = rng.Next(1, mapWidth);
