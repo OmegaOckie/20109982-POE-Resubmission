@@ -104,10 +104,10 @@ namespace _20109982_Task_1
                 {
                     switch (gameEng.map.mapAccessor[x, y])
                     {
-                        case EmptyTile _:
+                        case Tile.EmptyTile _:
                             gameMapLabel.Text += "_";
                             break;
-                        case Obstacle _:
+                        case Tile.Obstacle _:
                             gameMapLabel.Text += "X";
                             break;
                         case Hero _:

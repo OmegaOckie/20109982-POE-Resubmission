@@ -51,10 +51,8 @@ namespace _20109982_Task_1
         /// <param name="xInput"></param>
         /// <param name="yInput"></param>
         /// <param name="symbol"></param>
-        public Character(int xInput,int yInput, char symbol) : base()
+        public Character(int xInput,int yInput, char symbol) : base(xInput, yInput)
         {
-            X = xInput;
-            Y = yInput;
         }
 
         public Tile[,] characterVision

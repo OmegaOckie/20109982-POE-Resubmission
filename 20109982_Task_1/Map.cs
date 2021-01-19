@@ -17,7 +17,7 @@ namespace _20109982_Task_1
         /// <summary>
         /// Task 1 Q.3.1 The variables are declared here.
         /// </summary>
-        protected Tile[,] mapArray;
+        private Tile[,] mapArray;
         public Tile[,] mapAccessor;
         public Tile[,] mapArrayAccessor
         {
@@ -116,6 +116,10 @@ namespace _20109982_Task_1
             myHero = (Hero)Create(Tile.TileType.HERO);
 
             for (int i = 0; i < myEnemies.Count(); i++)
+            {
+                myEnemies[i] = (Enemy)Create(Tile.TileType.ENEMY);
+            }
+            for (int i = 0; i < amountOfGoldDrops; i++)
             {
                 myEnemies[i] = (Enemy)Create(Tile.TileType.ENEMY);
             }

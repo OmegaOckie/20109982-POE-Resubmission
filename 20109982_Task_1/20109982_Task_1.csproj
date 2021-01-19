@@ -46,8 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmptyTile.cs" />
-    <Compile Include="Obstacle.cs" />
     <Compile Include="Shop.cs" />
     <Compile Include="RangedWeapon.cs" />
     <Compile Include="Weapon.cs" />

@@ -48,46 +48,32 @@ namespace _20109982_Task_1
                 Y = value;
             }
         }
-        protected TileType tile;
-        public TileType tile_Accessor
-        {
-            get
-            {
-                return tile;
-            }
-            set
-            {
-                tile = value;
-            }
-        }
+
 
 
 
         /// <summary>
         /// Task 1 Q.2.1 Tile Constructor that sets the initial values for the Tile
         /// </summary>
-        public Tile()
+        public Tile(int x, int y)
         {
             X = x;
             Y = y;
-            tile_Accessor = TileType.HERO;
         }
 
         /// <summary>
         /// Task 1 Q.2.1 Exists to border the map
         /// </summary>
-        class Obstacle : Tile
+       internal class Obstacle : Tile
     {
-            public Obstacle(int xInput, int yInput) : base()
+            public Obstacle(int xInput, int yInput) : base(xInput, yInput)
             {
-                X = xInput;
-                Y = yInput;
             }
     }
 
-        class EmptyTile : Tile
+       internal class EmptyTile : Tile
         {
-            public EmptyTile(int xInput, int yInput) : base()
+            public EmptyTile(int xInput, int yInput) : base(xInput, yInput)
             {
             }
         }

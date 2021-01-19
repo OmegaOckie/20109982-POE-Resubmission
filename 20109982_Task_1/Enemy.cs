@@ -14,7 +14,7 @@ namespace _20109982_Task_1
         protected Random rng = new Random();
 
         /// <summary>
-        /// Task 1 Q.2.4 The enemy Constructor
+        /// Task 1 Q.2.4 The enemy Constructor that receives X and Y positions, an enemy’s damage and it is starting HP(and thus also max HP) and its symbol.
         /// </summary>
         /// <param name="xPosition"></param>
         /// <param name="yPosition"></param>
@@ -27,6 +27,7 @@ namespace _20109982_Task_1
             Y = yPosition;
             maxHP = startingHP;
             HP = startingHP;
+            damage = enemyDamage;
         }
 
         /// <summary>
@@ -35,6 +36,9 @@ namespace _20109982_Task_1
         /// <returns></returns>
         public override string ToString()
         {
+            //return $"{Enemy.TileType.ENEMY}: {weaponType}: { this.GetType().FullName } ({HP}  at [ { X } , { Y } ] (  {damage} DMG)";
+
+            //Previous output version
             return $"{Enemy.TileType.ENEMY} at [{X},{Y}] ({damage} DMG)";
         }
     }
@@ -74,6 +78,8 @@ namespace _20109982_Task_1
 
         /// <summary>
         /// Q.2.4 A constructor that sets the stats of the Leader.
+        /// Leaders have 20 HP
+        /// Leaders do 2 damage
         /// </summary>
         /// <param name="xPosition"></param>
         /// <param name="yPosition"></param>
