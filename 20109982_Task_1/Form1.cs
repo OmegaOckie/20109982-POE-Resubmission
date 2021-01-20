@@ -64,6 +64,10 @@ namespace _20109982_Task_1
         }
         private void shopButton_Click(object sender, EventArgs e)
         {
+            Hero myHero = new Hero(1, 1, 5, 'h');
+            Shop myShop = new Shop(myHero);
+            consoleListBox.Text = myShop.DisplayWeapon(3);
+
 
         }
 
@@ -93,7 +97,6 @@ namespace _20109982_Task_1
         private void updateMap()
         {
              gameMapRichTextBox.Clear();
-            string newLine;
             heroStatsLabel.Text = gameEng.map.hero.ToString();
 
             // This updates the map every time we move 

@@ -199,7 +199,7 @@ namespace _20109982_Task_1
 
                     break;
                 case Tile.TileType.GOLD:
-                    Gold(randomX, randomY);
+                    tempTile = new Gold(randomX, randomY);
                     break;
                 case Tile.TileType.WEAPON:
                     int weaponType = rng.Next(4);

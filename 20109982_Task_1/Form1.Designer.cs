@@ -40,9 +40,9 @@
             this.loadButton = new System.Windows.Forms.Button();
             this.enemyStatsLabel = new System.Windows.Forms.Label();
             this.mapGroupBox = new System.Windows.Forms.GroupBox();
-            this.attackButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.gameMapRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.attackButton = new System.Windows.Forms.Button();
+            this.consoleListBox = new System.Windows.Forms.ListBox();
             this.mapGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,6 +171,14 @@
             this.mapGroupBox.TabStop = false;
             this.mapGroupBox.Text = "Map";
             // 
+            // gameMapRichTextBox
+            // 
+            this.gameMapRichTextBox.Location = new System.Drawing.Point(6, 19);
+            this.gameMapRichTextBox.Name = "gameMapRichTextBox";
+            this.gameMapRichTextBox.Size = new System.Drawing.Size(408, 249);
+            this.gameMapRichTextBox.TabIndex = 1;
+            this.gameMapRichTextBox.Text = "";
+            // 
             // attackButton
             // 
             this.attackButton.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,28 +190,20 @@
             this.attackButton.Text = "Attack";
             this.attackButton.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // consoleListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(444, 331);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(246, 108);
-            this.listBox1.TabIndex = 14;
-            // 
-            // gameMapRichTextBox
-            // 
-            this.gameMapRichTextBox.Location = new System.Drawing.Point(6, 19);
-            this.gameMapRichTextBox.Name = "gameMapRichTextBox";
-            this.gameMapRichTextBox.Size = new System.Drawing.Size(408, 249);
-            this.gameMapRichTextBox.TabIndex = 1;
-            this.gameMapRichTextBox.Text = "";
+            this.consoleListBox.FormattingEnabled = true;
+            this.consoleListBox.Location = new System.Drawing.Point(444, 331);
+            this.consoleListBox.Name = "consoleListBox";
+            this.consoleListBox.Size = new System.Drawing.Size(246, 108);
+            this.consoleListBox.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.consoleListBox);
             this.Controls.Add(this.attackButton);
             this.Controls.Add(this.mapGroupBox);
             this.Controls.Add(this.enemyStatsLabel);
@@ -240,7 +240,7 @@
         private System.Windows.Forms.Label enemyStatsLabel;
         private System.Windows.Forms.GroupBox mapGroupBox;
         private System.Windows.Forms.Button attackButton;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox consoleListBox;
         private System.Windows.Forms.RichTextBox gameMapRichTextBox;
     }
 }
